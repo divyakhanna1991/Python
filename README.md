@@ -12,6 +12,9 @@ a) Example: Peter
 b) Print your name by using for loop
 
 c) check the user name is palindrome or not
+
+
+ANSWE:-
 str="";    
 for Row in range(0,7):    
     for Col in range(0,7):     
