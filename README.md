@@ -14,8 +14,9 @@ b) Print your name by using for loop
 c) check the user name is palindrome or not
 
 
-ANSWE:-
-str="";    
+ANSWER:-
+
+str="P\n"; 
 for Row in range(0,7):    
     for Col in range(0,7):     
         if (Col == 1 or ((Row == 0 or Row == 3) and Col > 0 and Col < 5) or ((Col == 5 or Col == 1) and (Row == 1 or Row == 2))):  
@@ -23,20 +24,13 @@ for Row in range(0,7):
         else:      
             str=str+" "    
     str=str+"\n"    
-print(str);
-print("b)")
-for letter in name:
-    print(letter, end=" ")
-print()
+print(str); 
+username = input("Enter the username: ")
 
+s = username.lower() 
+s = ''.join(char for char in s if char.isalnum())
 
-palindrome = True
-for i in range(len(name) // 2):
-    if name[i] != name[-i - 1]:
-        palindrome = False
-        break
-
-if palindrome:
-    print("c) The name is a palindrome.")
+if s == s[::-1]:
+    print("The username is a palindrome.")
 else:
-    print("c) The name is not a palindrome.")
+    print("The username is not a palindrome.")
