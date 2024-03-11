@@ -14,7 +14,7 @@ b) Print your name by using for loop
 c) check the user name is palindrome or not
 
 
-ANSWER:-
+Answer:-
 
 str="P\n"; 
 for Row in range(0,7):    
