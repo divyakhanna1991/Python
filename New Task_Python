@@ -1,4 +1,4 @@
-1. Write python program to check Aadhaar card number is valid or not. If valid, display his details like name, company name.
+1.. Write python program to check Aadhaar card number is valid or not. If valid, display his details like name, company name
 2. Given a list of N numbers, use a single list comprehension to produce a new list that only contains:
 a) Even numbers
 b) from elements in the original list that even indices
@@ -11,3 +11,86 @@ original list.
 a) to add items to their cart,
 b) view their cart,
 c) calculate the total price.
+
+ANSWER 1ST CODE
+import re
+
+def check_aadhaar_number(aadhaar_number):
+    # Validate Aadhaar number format
+    pattern = re.compile(r'^\d{12}$')
+    if not pattern.match(aadhaar_number):
+        return False
+    
+    # Fetch details using Aadhaar number
+    name = input("Enter Aadhaar card number: ")
+    company = input("Enter company name Aadhaar card: ")
+    
+    return name, company
+
+# Example usage
+aadhaar_number = input("Enter Aadhaar card number: ")
+details = check_aadhaar_number(aadhaar_number)
+if details:
+    name, company = details
+    print("Aadhaar card is valid.")
+    print("Name:", name)
+    print("Company:", company)
+else:
+    print("Invalid Aadhaar card number.")
+
+
+ANSWER 2ND CODE
+original_list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+new_list = [num for index, num in enumerate(original_list) if index % 2 == 0 and num % 2 == 0]
+
+print(new_list)
+
+ANSER 3RD CODE
+class ShoppingCart:
+    def _init_(self):
+        self.items = []
+
+    def add_item(self, item):
+        self.items.append(item)
+        print("Item added to cart.")
+
+    def view_cart(self):
+        if not self.items:
+            print("Cart is empty.")
+        else:
+            print("Cart items:")
+            for item in self.items:
+                print(item)
+
+    def calculate_total_price(self):
+        total_price = sum(item.price for item in self.items)
+        print("Total price:", total_price)
+
+class Item:
+    def _init_(self, name, price):
+        self.name = name
+        self.price = price
+
+    def _str_(self):
+        return f"{self.name} - ${self.price}"
+
+# Example usage
+cart = ShoppingCart()
+
+while True:
+    choice = input("Enter 'a' to add an item, 'v' to view cart, 't' to calculate total price, or 'q' to quit: ")
+    
+    if choice == 'a':
+        name = input("Enter item name: ")
+        price = float(input("Enter item price: "))
+        item = Item(name, price)
+        cart.add_item(item)
+    elif choice == 'v':
+        cart.view_cart()
+    elif choice == 't':
+        cart.calculate_total_price()
+    elif choice == 'q':
+        break
+    else:
+        print("Invalid choice. Please try again.")
