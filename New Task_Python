@@ -11,3 +11,84 @@ original list.
 a) to add items to their cart,
 b) view their cart,
 c) calculate the total price.
+
+ANSWER CODE
+1. CODE
+def check_aadhaar_number(aadhaar_number):
+    # Validate Aadhaar number format
+    pattern = re.compile(r'^\d{12}$')
+    if not pattern.match(aadhaar_number):
+        return False
+    
+    # Fetch details using Aadhaar number
+    name = input("Enter name associated with Aadhaar card: ")
+    company = input("Enter company name associated with Aadhaar card: ")
+    
+    return name, company
+
+# Example usage
+aadhaar_number = input("Enter Aadhaar card number: ")
+details = check_aadhaar_number(aadhaar_number)
+if details:
+    name, company = details
+    print("Aadhaar card is valid.")
+    print("Name:", name)
+    print("Company:", company)
+else:
+    print("Invalid Aadhaar card number.")
+
+2. CODE
+original_list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+new_list = [num for index, num in enumerate(original_list) if index % 2 == 0 and num % 2 == 0]
+
+print(new_list)
+
+3. CODE
+class ShoppingCart:
+    def _init_(self):
+        self.items = []
+
+    def add_item(self, item):
+        self.items.append(item)
+        print("Item added to cart.")
+
+    def view_cart(self):
+        if not self.items:
+            print("Cart is empty.")
+        else:
+            print("Cart items:")
+            for item in self.items:
+                print(item)
+
+    def calculate_total_price(self):
+        total_price = sum(item.price for item in self.items)
+        print("Total price:", total_price)
+
+class Item:
+    def _init_(self, name, price):
+        self.name = name
+        self.price = price
+
+    def _str_(self):
+        return f"{self.name} - ${self.price}"
+
+# Example usage
+cart = ShoppingCart()
+
+while True:
+    choice = input("Enter 'a' to add an item, 'v' to view cart, 't' to calculate total price, or 'q' to quit: ")
+    
+    if choice == 'a':
+        name = input("Enter item name: ")
+        price = float(input("Enter item price: "))
+        item = Item(name, price)
+        cart.add_item(item)
+    elif choice == 'v':
+        cart.view_cart()
+    elif choice == 't':
+        cart.calculate_total_price()
+    elif choice == 'q':
+        break
+    else:
+        print("Invalid choice. Please try again.")
