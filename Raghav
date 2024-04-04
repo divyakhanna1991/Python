@@ -1,0 +1,32 @@
+Answer a) 
+def print_initial(name):
+    initial = name[0].upper()
+    print(" " * 4 + "* " * 3)
+    print(" " * 4 + "* " + " " * 5 + "*")
+    print(" " * 4 + "* " + " " * 5 + "*")
+    print(" " * 4 + "* " * 3)
+    print(" " * 4 + "*")
+    print(" " * 4 + "*")
+    print(" " * 4 + "*")
+
+name = input("Enter your name: ")
+print_initial(name)
+
+Ans b)
+name = "raghavgupta"
+
+for letter in name:
+    print(letter)
+    Ans c) 
+    def is_palindrome(word):
+    word = word.lower()
+    reversed_word = word[::-1]
+    if word == reversed_word:
+        return True
+    else:
+        return False
+username = input("Enter the username: ")
+if is_palindrome(username):
+    print("The username '{}' is a palindrome.".format(username))
+else:
+    print("The username '{}' is not a palindrome.".format(username))
