@@ -1,13 +1,137 @@
 1. Write python program to check Aadhaar card number is valid or not. If valid, display his details like name, company name.
+Ans 1.
+aadhaar_details = {
+    "123456789012": {"name": "John Doe", "company": "XYZ Corporation"},
+    "987654321098": {"name": "Jane Smith", "company": "ABC Ltd"}
+    # Add more Aadhaar card details as needed
+}
+
+def validate_aadhaar(aadhaar_number):
+    return len(aadhaar_number) == 12 and aadhaar_number.isdigit()
+
+def get_aadhaar_details(aadhaar_number):
+    return aadhaar_details.get(aadhaar_number)
+
+def main():
+    aadhaar_number = input("Enter Aadhaar card number: ")
+
+    if validate_aadhaar(aadhaar_number):
+        details = get_aadhaar_details(aadhaar_number)
+        if details:
+            print("Aadhaar card details:")
+            print("Name:", details["name"])
+            print("Company:", details["company"])
+        else:
+            print("No details found for the given Aadhaar card number.")
+    else:
+        print("Invalid Aadhaar card number.")
+
+if __name__ == "__main__":
+    main()
+
 2. Given a list of N numbers, use a single list comprehension to produce a new list that only contains:
 a) Even numbers
 b) from elements in the original list that even indices
-c) Print the Occurrences of an individual element
-If the list[2] contains a value that is even, that value should be included in the new list,
+@@ -7,7 +37,101 @@ If the list[2] contains a value that is even, that value should be included in t
 since it is also at an index (i.e. 2) in the original list. If the list[3] contains an even
 number, that number should not be included in the list since it is at an odd index in the
 original list.
+Ans:- A
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+# List comprehension to filter even numbers
+even_numbers = [num for num in numbers if num % 2 == 0]
+
+print(even_numbers)
+
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+# List comprehension to select elements at even indices
+even_index_elements = [numbers[i] for i in range(len(numbers)) if i % 2 == 0]
+
+print(even_index_elements)
+
+numbers = [1, 2, 3, 4, 2, 5, 2, 6, 7, 8, 9, 2, 10]
+
+# Element for which occurrences need to be counted
+element_to_count = 2
+
+# Count the occurrences of the element
+occurrences = numbers.count(element_to_count)
+
+print(f"The element {element_to_count} occurs {occurrences} times.")
+
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+selected_elements = [numbers[i] for i in range(len(numbers)) if i % 2 == 0 and numbers[i] % 2 == 0]
+
+print(selected_elements)
+
+
 3.Write python program to generate basic online shopping cart. This program will allow users:
 a) to add items to their cart,
 b) view their cart,
 c) calculate the total price.
+Ans:-3.
+class ShoppingCart:
+    def __init__(self):
+        self.items = {}  # Dictionary to store items in the cart
+
+    def add_item(self, item, price, quantity=1):
+        if item in self.items:
+            self.items[item] += quantity  # If item already exists, increase quantity
+        else:
+            self.items[item] = quantity   # Otherwise, add new item with quantity
+
+        print(f"{quantity} {item}(s) added to the cart.")
+
+    def view_cart(self):
+        print("Your Shopping Cart:")
+        for item, quantity in self.items.items():
+            print(f"{item}: {quantity}")
+
+    def calculate_total(self, prices):
+        total_price = sum(prices[item] * quantity for item, quantity in self.items.items())
+        print(f"Total Price: ${total_price:.2f}")
+
+
+def main():
+    # Sample prices for items
+    prices = {"Apple": 1.0, "Banana": 0.5, "Orange": 0.75, "Mango": 2.0}
+
+    # Initialize shopping cart
+    cart = ShoppingCart()
+
+    while True:
+        print("\n1. Add item to cart")
+        print("2. View cart")
+        print("3. Calculate total price")
+        print("4. Exit")
+        choice = input("Enter your choice: ")
+
+        if choice == "1":
+            item = input("Enter item name: ")
+            if item in prices:
+                quantity = int(input("Enter quantity: "))
+                cart.add_item(item, prices[item], quantity)
+            else:
+                print("Item not found.")
+
+        elif choice == "2":
+            cart.view_cart()
+
+        elif choice == "3":
+            cart.calculate_total(prices)
+
+        elif choice == "4":
+            print("Thank you for shopping with us!")
+            break
+
+        else:
+            print("Invalid choice. Please enter a valid option.")
+
+
+if __name__ == "__main__":
+    main()
+
+Footer
