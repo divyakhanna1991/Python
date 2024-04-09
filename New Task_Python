@@ -11,3 +11,80 @@ original list.
 a) to add items to their cart,
 b) view their cart,
 c) calculate the total price.
+
+Answer:1 def is_valid_aadhaar(aadhaar_number):
+    """
+    Function to check if Aadhaar card number is valid or not.
+    """
+    # Check if Aadhaar number is exactly 12 digits
+    if len(aadhaar_number) != 12:
+        return False
+    
+    # Check if Aadhaar number contains only digits
+    if not aadhaar_number.isdigit():
+        return False
+    
+    # Verhoeff algorithm implementation for checksum validation
+    multiplication_table = (
+        (0, 1, 2, 3, 4, 5, 6, 7, 8, 9),
+        (1, 2, 3, 4, 0, 6, 7, 8, 9, 5),
+        (2, 3, 4, 0, 1, 7, 8, 9, 5, 6),
+        (3, 4, 0, 1, 2, 8, 9, 5, 6, 7),
+        (4, 0, 1, 2, 3, 9, 5, 6, 7, 8),
+        (5, 9, 8, 7, 6, 0, 4, 3, 2, 1),
+        (6, 5, 9, 8, 7, 1, 0, 4, 3, 2),
+        (7, 6, 5, 9, 8, 2, 1, 0, 4, 3),
+        (8, 7, 6, 5, 9, 3, 2, 1, 0, 4),
+        (9, 8, 7, 6, 5, 4, 3, 2, 1, 0)
+    )
+
+    permutation_table = (
+        (0, 1, 2, 3, 4, 5, 6, 7, 8, 9),
+        (1, 5, 7, 6, 2, 8, 3, 0,
+Answer:2 original_list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+new_list = [num for i, num in enumerate(original_list) if i % 2 == 0 and num % 2 == 0]
+
+print(new_list)
+
+occurrences = {num: original_list.count(num) for num in original_list}
+print(occurrences)
+This comprehension iterates over the elements of the original list and their indices using enumerate(). It checks if the index is even (i % 2 == 0) and if the number at that index is even (num % 2 == 0). If both conditions are met, the number is included in the new list. Finally, it prints the occurrences of each individual element in the original list using a dictionary comprehension
+
+Answer:3 class ShoppingCart:
+    def __init__(self):
+        self.items = {}
+
+    def add_item(self, item, price, quantity=1):
+        if item in self.items:
+            self.items[item]['quantity'] += quantity
+        else:
+            self.items[item] = {'price': price, 'quantity': quantity}
+
+    def view_cart(self):
+        if self.items:
+            print("Items in your cart:")
+            for item, details in self.items.items():
+                print(f"{item}: ${details['price']} x {details['quantity']}")
+        else:
+            print("Your cart is empty.")
+
+    def calculate_total(self):
+        total = sum(details['price'] * details['quantity'] for details in self.items.values())
+        return total
+
+# Example usage:
+cart = ShoppingCart()
+
+# Adding items to the cart
+cart.add_item('Shirt', 25.99)
+cart.add_item('Pants', 35.99, 2)
+cart.add_item('Shoes', 49.99)
+
+# Viewing the cart
+cart.view_cart()
+
+# Calculating the total price
+total_price = cart.calculate_total()
+print(f"Total price: ${total_price}")
+This program defines a ShoppingCart class with methods to add items to the cart, view the cart, and calculate the total price. You can create an instance of the ShoppingCart class and use its methods to interact with the cart.
