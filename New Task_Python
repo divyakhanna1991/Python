@@ -1,4 +1,25 @@
 1. Write python program to check Aadhaar card number is valid or not. If valid, display his details like name, company name.
+import re
+
+def check_aadhaar_number(aadhaar_number):
+    pattern = re.compile(r'^\d{12}$')
+    if not pattern.match(aadhaar_number):
+        return False
+    name = input("Enter name associated with Aadhaar card: ")
+    company = input("Enter company name associated with Aadhaar card: ")
+    
+    return name, company
+aadhaar_number = input("Enter Aadhaar card number: ")
+details = check_aadhaar_number(aadhaar_number)
+if details:
+    name, company = details
+    print("Aadhaar card is valid.")
+    print("Name:", name)
+    print("Company:", company)
+else:
+    print("Invalid Aadhaar card number.")
+
+
 2. Given a list of N numbers, use a single list comprehension to produce a new list that only contains:
 a) Even numbers
 b) from elements in the original list that even indices
@@ -7,7 +28,64 @@ If the list[2] contains a value that is even, that value should be included in t
 since it is also at an index (i.e. 2) in the original list. If the list[3] contains an even
 number, that number should not be included in the list since it is at an odd index in the
 original list.
+
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+even_numbers = [num for num in numbers if num % 2 == 0]
+even_numbers_even_indices = [numbers[i] for i in range(len(numbers)) if i % 2 == 0 and numbers[i] % 2 == 0]
+occurrences = {num: numbers.count(num) for num in set(numbers)}
+print("Even numbers:", even_numbers)
+print("Even numbers from elements at even indices:", even_numbers_even_indices)
+print("Occurrences of individual elements:", occurrences)
+
+
 3.Write python program to generate basic online shopping cart. This program will allow users:
 a) to add items to their cart,
 b) view their cart,
 c) calculate the total price.
+class ShoppingCart:
+    def __init__(self):
+        self.items = {}
+    def add_item(self, item, price, quantity=1):
+        if item in self.items:
+            self.items[item]['quantity'] += quantity
+        else:
+            self.items[item] = {'price': price, 'quantity': quantity}
+        print(f"{quantity} {item}(s) added to the cart.")
+
+    def view_cart(self):
+        if not self.items:
+            print("Your cart is empty.")
+        else:
+            print("Your cart:")
+            for item, details in self.items.items():
+                print(f"{item}: ${details['price']} x {details['quantity']}")
+
+    def calculate_total(self):
+        total = sum(details['price'] * details['quantity']
+        for details in self.items.values())
+        print(f"Total price: ${total:.2f}")
+
+cart = ShoppingCart()
+while True:
+    print("\nMENU:")
+    print("1. Add item to cart")
+    print("2. View cart")
+    print("3. Calculate total price")
+    print("4. Exit")
+    choice = input("Enter your choice: ")
+
+    if choice == '1':
+        item = input("Enter item name: ")
+        price = float(input("Enter item price: "))
+        quantity = int(input("Enter quantity (default is 1): ") or 1)
+        cart.add_item(item, price, quantity)
+    elif choice == '2':
+        cart.view_cart()
+    elif choice == '3':
+        cart.calculate_total()
+    elif choice == '4':
+        print("Thank you for shopping with us!")
+        break
+    else:
+        print("Invalid choice. Please enter a valid option.")
+
