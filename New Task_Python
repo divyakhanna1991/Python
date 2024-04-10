@@ -11,3 +11,84 @@ original list.
 a) to add items to their cart,
 b) view their cart,
 c) calculate the total price.
+
+
+
+1. Write python program to check Aadhaar card number is valid or not. If valid, display his details like name, company name.
+
+aadhaar_data = {
+    "123456789012": {"name": "Ramesh Kumar", "company": "Infosys"},
+    "234567890123": {"name": "Aman ", "company": "Tech Burnur"}
+}
+
+aadhaar_number = input("Enter Aadhaar number: ")
+
+if len(aadhaar_number) != 12 or not aadhaar_number.isdigit():
+    print("Invalid Aadhaar number")
+else:
+    if aadhaar_number in aadhaar_data:
+        print("Aadhaar number is valid.")
+        print("Name:", aadhaar_data[aadhaar_number]["name"])
+        print("Company:", aadhaar_data[aadhaar_number]["company"])
+    else:
+        print("Aadhaar number not found.")
+
+
+2. Given a list of N numbers, use a single list comprehension to produce a new list that only contains:
+a) Even numbers
+b) from elements in the original list that even indices
+c) Print the Occurrences of an individual element
+If the list[2] contains a value that is even, that value should be included in the new list,
+since it is also at an index (i.e. 2) in the original list. If the list[3] contains an even
+number, that number should not be included in the list since it is at an odd index in the
+original list.
+
+original_list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+new_list = [num for index, num in enumerate(original_list) if index % 2 == 0 and num % 2 == 0]
+
+print("New list with even numbers at even indices:", new_list)
+occurrences = {num: original_list.count(num) for num in set(original_list)}
+print("Occurrences of each element:", occurrences)
+
+3.Write python program to generate basic online shopping cart. This program will allow users:
+a) to add items to their cart,
+b) view their cart,
+c) calculate the total price.
+
+items = {
+    'Grapes': 1.00,
+    'Kiwo': 0.50,
+    'Dragon fruit': 0.75,
+    'Pineapple': 1.25,
+}
+
+cart = {}
+while True:
+    print("\nAvailable Items:")
+    for item, price in items.items():
+        print(f"{item.capitalize()}: ${price}")
+
+    choice = input("\nEnter the item you want to add to cart (or 'done' to finish shopping): ").lower()
+    if choice == 'done':
+        break
+    if choice in items:
+        quantity = int(input(f"How many {choice}s would you like to add? "))
+        if choice in cart:
+            cart[choice] += quantity
+        else:
+            cart[choice] = quantity
+    else:
+        print("Invalid item! Please choose from the available items.")
+
+# Display the contents of the cart
+print("\nYour Cart:")
+total_price = 0
+for item, quantity in cart.items():
+    price = items[item] * quantity
+    total_price += price
+    print(f"{item.capitalize()}: {quantity} x ${items[item]} = ${price:.2f}")
+print(f"\nTotal Price: ${total_price:.2f}")
+
+
+
