@@ -11,3 +11,134 @@ original list.
 a) to add items to their cart,
 b) view their cart,
 c) calculate the total price.
+
+
+
+
+Q.1 ans=>
+
+# Sample function to check validity of Aadhaar number
+def is_valid_aadhaar(aadhaar_number):
+    return len(aadhaar_number) == 12 and aadhaar_number.isdigit()
+
+# Sample function to retrieve details from database
+def get_aadhaar_details(aadhaar_number):
+    # Dummy database with Aadhaar details
+    aadhaar_database = {
+        "123456789012": {"name": "John Doe", "company_name": "Example Corp"},
+        "987654321098": {"name": "Jane Smith", "company_name": "Sample Inc"}
+    }
+    
+    return aadhaar_database.get(aadhaar_number)
+
+# Main program
+def main():
+    aadhaar_number = input("Enter Aadhaar card number: ")
+    
+    if is_valid_aadhaar(aadhaar_number):
+        details = get_aadhaar_details(aadhaar_number)
+        if details:
+            print("Name:", details.get("name"))
+            print("Company Name:", details.get("company_name"))
+        else:
+            print("Details not found for this Aadhaar number.")
+    else:
+        print("Invalid Aadhaar card number.")
+
+if __name__ == "__main__":
+    main()
+
+
+
+
+
+
+
+Q.2 ans=>
+
+
+# Sample list
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+# Part a) Extract even numbers
+even_numbers = [num for num in numbers if num % 2 == 0]
+
+# Part b) Extract even numbers at even indices
+even_numbers_even_indices = [numbers[i] for i in range(len(numbers)) if i % 2 == 0 and numbers[i] % 2 == 0]
+
+# Part c) Count occurrences of each element
+occurrences = {num: numbers.count(num) for num in numbers}
+
+print("Part a) Even numbers:", even_numbers)
+print("Part b) Even numbers at even indices:", even_numbers_even_indices)
+print("Part c) Occurrences of each element:", occurrences)
+
+
+
+
+
+
+
+Q.3 ans=>
+
+
+class ShoppingCart:
+    def __init__(self):
+        self.cart = []
+
+    def add_item(self, item_name, item_price):
+        self.cart.append({"item_name": item_name, "item_price": item_price})
+
+    def view_cart(self):
+        if not self.cart:
+            print("Your cart is empty.")
+        else:
+            print("Your cart:")
+            for item in self.cart:
+                print(f"{item['item_name']}: ${item['item_price']}")
+
+    def calculate_total_price(self):
+        total_price = sum(item['item_price'] for item in self.cart)
+        return total_price
+
+def main():
+    # Initialize shopping cart
+    cart = ShoppingCart()
+
+    while True:
+        print("\n1. Add item to cart")
+        print("2. View cart")
+        print("3. Calculate total price")
+        print("4. Exit")
+        choice = input("Enter your choice: ")
+
+        if choice == '1':
+            item_name = input("Enter item name: ")
+            item_price = float(input("Enter item price: "))
+            cart.add_item(item_name, item_price)
+            print("Item added to cart.")
+        elif choice == '2':
+            cart.view_cart()
+        elif choice == '3':
+            total_price = cart.calculate_total_price()
+            print(f"Total price: ${total_price}")
+        elif choice == '4':
+            print("Thank you for shopping with us!")
+            break
+        else:
+            print("Invalid choice. Please try again.")
+
+if __name__ == "__main__":
+    main()
+
+
+
+
+
+
+
+
+
+
+
+
