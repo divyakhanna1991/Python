@@ -4,3 +4,103 @@ b) scientific calculation
 c) conversion in binary, octal, hexadecimal, decimal
 d) temperature conversion
 e) length conversion
+
+
+
+import math
+
+def basic_calculator():
+    print("Basic Calculator")
+    num1 = float(input("Enter first number: "))
+    operator = input("Enter operator (+, -, *, /): ")
+    num2 = float(input("Enter second number: "))
+
+    if operator == '+':
+        print("Result:", num1 + num2)
+    elif operator == '-':
+        print("Result:", num1 - num2)
+    elif operator == '*':
+        print("Result:", num1 * num2)
+    elif operator == '/':
+        if num2 != 0:
+            print("Result:", num1 / num2)
+        else:
+            print("Error: Cannot divide by zero")
+    else:
+        print("Invalid operator")
+
+def scientific_calculator():
+    print("Scientific Calculator")
+    num = float(input("Enter a number: "))
+
+    print("1. Square root")
+    print("2. Logarithm (base 10)")
+    print("3. Natural logarithm")
+    choice = int(input("Enter your choice (1/2/3): "))
+
+    if choice == 1:
+        print("Square root:", math.sqrt(num))
+    elif choice == 2:
+        print("Logarithm (base 10):", math.log10(num))
+    elif choice == 3:
+        print("Natural logarithm:", math.log(num))
+    else:
+        print("Invalid choice")
+
+def conversion_calculator():
+    print("Conversion Calculator")
+    print("1. Binary")
+    print("2. Octal")
+    print("3. Hexadecimal")
+    print("4. Temperature")
+    print("5. Length")
+    choice = int(input("Enter your choice (1/2/3/4/5): "))
+
+    if choice == 1:
+        num = int(input("Enter a decimal number: "))
+        print("Binary:", bin(num))
+    elif choice == 2:
+        num = int(input("Enter a decimal number: "))
+        print("Octal:", oct(num))
+    elif choice == 3:
+        num = int(input("Enter a decimal number: "))
+        print("Hexadecimal:", hex(num))
+    elif choice == 4:
+        celsius = float(input("Enter temperature in Celsius: "))
+        fahrenheit = (celsius * 9/5) + 32
+        print("Temperature in Fahrenheit:", fahrenheit)
+    elif choice == 5:
+        length = float(input("Enter length in meters: "))
+        print("1. Meters to Kilometers")
+        print("2. Meters to Centimeters")
+        print("3. Meters to Millimeters")
+        sub_choice = int(input("Enter your choice (1/2/3): "))
+        if sub_choice == 1:
+            print("Length in Kilometers:", length / 1000)
+        elif sub_choice == 2:
+            print("Length in Centimeters:", length * 100)
+        elif sub_choice == 3:
+            print("Length in Millimeters:", length * 1000)
+        else:
+            print("Invalid choice")
+    else:
+        print("Invalid choice")
+
+def main():
+    print("Welcome to Calculator")
+    print("1. Basic Calculator")
+    print("2. Scientific Calculator")
+    print("3. Conversion Calculator")
+    choice = int(input("Enter your choice (1/2/3): "))
+
+    if choice == 1:
+        basic_calculator()
+    elif choice == 2:
+        scientific_calculator()
+    elif choice == 3:
+        conversion_calculator()
+    else:
+        print("Invalid choice")
+
+if _name_ == "_main_":
+    main()
