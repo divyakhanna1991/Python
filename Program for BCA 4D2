@@ -4,3 +4,119 @@ b) scientific calculation
 c) conversion in binary, octal, hexadecimal, decimal
 d) temperature conversion
 e) length conversion
+
+print("CALCULATOR")
+print("The menu is given below: ")
+w = 0
+while (w != 1):
+    print(" ")
+    print("1. Exit")
+    print("2. Basic Arithmetic")
+    print("3. Scientific Calculator")
+    print("4. Conversion in Binary, Octal and Hexadecimal")
+    print("5. Temperature Conversion")
+    print("6. Length Conversion")
+    print(" ")
+    w = input("Enter the Menu Number to select an option: ")
+    if w == 1:
+        break
+    elif w == 2:
+        print("**********Basic Calculator***********")
+        ar_in = 0
+        while ar_in != 5:
+            print("1. Addition")
+            print("2. Subtraction")
+            print("3. Division")
+            print("4. Multiplication")
+            print("5. Exit ")
+            ar_in = int(input("Enter the menu number to select an option: "))
+            if ar_in == 1:
+                add1 = int(input("Enter value 1: "))
+                add2 = int(input("Enter value 2: "))
+                print("The addition of entered values is: ", add1 + add2)
+                break
+            elif ar_in == 2:
+                sub1 = int(input("Enter value 1: "))
+                sub2 = int(input("Enter value 2: "))
+                print("The Subtraction of entered values is: ", sub1 - sub2)
+            elif ar_in == 3:
+                mul1 = int(input("Enter value 1: "))
+                mul2 = int(input("Enter value 2: "))
+                print("The Multiplication of entered values is: ", mul1 * mul2)
+            elif ar_in == 4:
+                div1 = int(input("Enter value 1: "))
+                div2 = int(input("Enter value 2: "))
+                print("The Division of entered values is: ", div1 / div2)
+            elif ar_in == 5:
+                break
+    elif w == 3:
+        print("********Scientific Calculator**********")
+        sc_in = 0
+        while sc_in != 5:
+            print("1. Fucntion 1")
+            print("2. Function 2")
+            print("3. Function 3")
+            print("4. Function 4")
+            print("5. Exit")
+            sc_in = int(input("Enter the option number to select an option: "))
+            if(sc_in == 1):
+                print("This is Function one")
+            elif(sc_in == 2):
+                print("This is function two")
+            elif(sc_in == 3):
+                print("This is function three")
+            elif(sc_in == 4):
+                print("This is function four")
+            elif(sc_in == 5):
+                break
+
+    elif w == 4:
+        print("Conversion Calculator")
+        con_in = 0
+        while con_in != 2:
+            print("1. Conversion")
+            print("2. Exit ")
+            con_in = int(input("Enter the menu option: "))
+            if (con_in == 2):
+                break
+            elif (con_in == 1):
+                val_0 = int(input("Enter the Value: "))
+                print("Conversion in Binary: ", bin(val_0))
+                print("Converison in HexaDecimal: ", hex(val_0))
+                print("Conversion in Octal: ", oct(val_0))
+                break
+
+    elif w == 5:
+        temp_in = 0
+        print("Temperature Conversion")
+        while temp_in != 3:
+            print("1. From F to C")
+            print("2. Form C to F")
+            print(("3. Exit"))
+            temp_in = int(input("Enter the menu option: "))
+            if(temp_in == 1):
+                print("Selected F to C")
+                num = int(input("Enter the number: "))
+                print("Converted Value from Fahrenheit to Celsius is: ", (num + 32) * 9/5)
+            elif (temp_in == 2):
+                print("Selected C to F")
+                num = int(input("Enter the number: "))
+                print("Converted value from Celsius to Fahrenheit")
+    elif w == 6:
+        print("Length Calculator")
+        print("1. Exit")
+        print("2. From cm to m")
+        print("3. From m to cm")
+        len_in = int(input("Enter the menu Option: "))
+        if len_in == 1:
+            break
+        elif len_in == 2:
+            print("Centimeter to Meter")
+            ff = int(input("Enter the Value: "))
+            print("Conversion = ", ff/100)
+        elif len_in == 3:
+            print("Meter to Centimeter")
+            ff = int(input("Enter the value: "))
+            print("Conversion = ", ff * 100)
+
+
