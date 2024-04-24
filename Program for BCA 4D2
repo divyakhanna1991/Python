@@ -4,3 +4,132 @@ b) scientific calculation
 c) conversion in binary, octal, hexadecimal, decimal
 d) temperature conversion
 e) length conversion
+
+
+
+
+import math as m
+
+while True:
+    print()
+    print("Enter 1 for Basic Arithmetic.")
+    print("Enter 2 for Scientific Calculator.")
+    print("Enter 3 for conversion in Binary Octal and Hexadecimal.")
+    print("Enter 4 for Temperature Conversion.")
+    print("Enter 5 for Length Conversion.")
+    print("Enter 6 for exit.\n")
+
+    ch = int(input("Enter your choice = "))
+    print()
+
+    if ch == 1:
+        num1 = int(input("Enter first No. = "))
+        num2 = int(input("Enter Second No. = "))
+        print()
+        print("Enter 1 for Addition.")
+        print("Enter 2 for Subtraction.")
+        print("Enter 3 for Multiplication.")
+        print("Enter 4 for Division.\n")
+
+        ch1 = int(input("\nEnter your choice = "))
+
+        if ch1 == 1:
+            print("Sum = ",(num1 + num2))
+        elif ch1 == 2:
+            print("Difference = ",(num1 - num2))
+        elif ch1 == 3:
+            print("Product = ",(num1 * num2))
+        elif ch1 == 4:
+            print("Quotient = ",(num1 / num2))
+        else:
+            print("Invalid choice.")
+
+    elif ch == 2:
+        angle = int(input("Enter the angle = "))
+        print()
+        print("Enter 1 for sin.")
+        print("Enter 2 for cos.")
+        print("Enter 3 for tan.")
+        print("Enter 4 for cosec")
+        print("Enter 5 for sec")
+        print("Enter 6 for cot.")
+        print("Enter 7 for Square root.")
+        print("Enter 8 for power.\n")
+        ch3 = int(input("Enter your choice = "))
+        if ch3 == 1:
+            print("Value = ", (m.sin(angle)))
+
+        elif ch3 == 2:
+            print("Value = ", (m.cos(angle)))
+
+        elif ch3 == 3:
+            print("Value = ", (m.tan(angle)))
+
+        elif ch3 == 4:
+            print("Value = ", (1/m.sin(angle)))
+
+        elif ch3 == 5:
+            print("Value = ", (1/m.cos(angle)))
+
+        elif ch3 == 6:
+            print("Value = ", (1/m.tan(angle)))
+
+        elif ch3 == 7:
+            print("Square root = ", (m.sqrt(angle)))
+
+        elif ch3 == 8:
+            num1 = int(input("Enter the base number: "))
+            num2 = int(input("Enter the exponent: "))
+            print("Result =", m.pow(num1, num2))
+
+        else:
+            print("Invalid choice.")
+
+    elif ch == 3:
+        num1 = int(input("Enter first No. = "))
+        num2 = int(input("Enter Second No. = "))
+        print()
+        print("Natural No.\t", end="")
+        print("Hexadecimal \t", end="")
+        print("Octal       \t", end="")
+        print("Binary Value    \t")
+        for i in range(num1, num2 + 1, +1):
+            print(i, "\t", end="")
+            print("         ", hex(i), "\t", end="")
+            print("         ", oct(i), "\t", end="")
+            print("         ", bin(i), "\t")
+
+    elif ch == 4:
+        print("Enter 1 for F to C.")
+        print("Enter 2 for C to F.")
+        ch2 = int(input("Enter your choice = "))
+
+        if ch2 == 1:
+            f = float(input("Enter temperature in Fahrenheit: "))
+            c = (f - 32) * (5 / 9)
+            print("Temperature in Celsius:", c)
+        elif ch2 == 2:
+            c = float(input("Enter temperature in Celsius: "))
+            f = c * 9 / 5 + 32
+            print("Temperature in Fahrenheit:", f)
+        else:
+            print("Invalid choice.")
+
+    elif ch == 5:
+        mm = int(input("Enter the length in mm = "))
+
+        print("Enter 1 to convert into cm")
+        print("Enter 2 to convert into m")
+
+        ch3 = int(input("Enter your choice = "))
+
+        if ch3 == 1:
+            print("Length in cm = ", (mm / 10))
+        elif ch3 == 2:
+            print("Length in m = ", (mm / 1000))
+        else:
+            print("Invalid choice.")
+
+    elif ch == 6:
+        print("Exiting...")
+        break
