@@ -4,3 +4,107 @@ b) scientific calculation
 c) conversion in binary, octal, hexadecimal, decimal
 d) temperature conversion
 e) length conversion
+
+
+ANSWER:-
+
+import math
+
+def arithmetic_operations():
+    print("1: Addition")
+    print("2: Subtraction")
+    print("3: Multiplication")
+    print("4: Division")
+    choice = int(input("Enter choice: "))
+    a = float(input("Enter first number: "))
+    b = float(input("Enter second number: "))
+    
+    if choice == 1:
+        print(f"{a} + {b} = {a + b}")
+    elif choice == 2:
+        print(f"{a} - {b} = {a - b}")
+    elif choice == 3:
+        print(f"{a} * {b} = {a * b}")
+    elif choice == 4:
+        if b == 0:
+            print("Error! Division by zero.")
+        else:
+            print(f"{a} / {b} = {a / b}")
+    else:
+        print("Invalid choice")
+
+def scientific_calculator():
+    print("1: Power")
+    print("2: Square Root")
+    print("3: Logarithm (base 10)")
+    print("4: Sine")
+    print("5: Cosine")
+    print("6: Tangent")
+    choice = int(input("Enter choice: "))
+    if choice in [1, 4, 5, 6]:
+        a = float(input("Enter the number: "))
+        b = None
+        if choice == 1:
+            b = float(input("Enter the power: "))
+    else:
+        a = float(input("Enter the number: "))
+
+    if choice == 1:
+        print(f"{a} ** {b} = {math.pow(a, b)}")
+    elif choice == 2:
+        print(f"sqrt({a}) = {math.sqrt(a)}")
+    elif choice == 3:
+        print(f"log10({a}) = {math.log10(a)}")
+    elif choice == 4:
+        print(f"sin({a}) = {math.sin(math.radians(a))}")
+    elif choice == 5:
+        print(f"cos({a}) = {math.cos(math.radians(a))}")
+    elif choice == 6:
+        print(f"tan({a}) = {math.tan(math.radians(a))}")
+    else:
+        print("Invalid choice")
+
+def conversion_numeral_system():
+    num = int(input("Enter number: "))
+    print(f"Binary: {bin(num)}")
+    print(f"Octal: {oct(num)}")
+    print(f"Hexadecimal: {hex(num)}")
+
+def temperature_converter():
+    temp = float(input("Enter temperature in Celsius: "))
+    print(f"{temp} C is {temp * 9 / 5 + 32} F")
+    print(f"{temp} C is {temp + 273.15} K")
+
+def length_conversion():
+    length = float(input("Enter length in meters: "))
+    print(f"{length} meters is {length * 100} centimeters")
+    print(f"{length} meters is {length / 1000} kilometers")
+
+def main_menu():
+    print("Calculator")
+    print("1: Arithmetic Operations")
+    print("2: Scientific Calculator")
+    print("3: Conversion to Binary/Octal/Hexadecimal")
+    print("4: Temperature Converter")
+    print("5: Length Conversion")
+    choice = int(input("Enter your choice: "))
+    
+    if choice == 1:
+        arithmetic_operations()
+    elif choice == 2:
+        scientific_calculator()
+    elif choice == 3:
+        conversion_numeral_system()
+    elif choice == 4:
+        temperature_converter()
+    elif choice == 5:
+        length_conversion()
+    else:
+        print("Invalid choice")
+
+if __name__ == "__main__":
+    while True:
+        main_menu()
+        if input("Do you want to continue (yes/no): ").lower() != "yes":
+            break
+
