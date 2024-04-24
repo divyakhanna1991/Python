@@ -4,3 +4,75 @@ b) scientific calculation
 c) conversion in binary, octal, hexadecimal, decimal
 d) temperature conversion
 e) length conversion
+
+import math
+def add(x, y):
+    return x + y
+def subtract(x, y):
+    return x - y
+def multiply(x, y):
+    return x * y
+def divide(x, y):
+    if y == 0:
+        return "Error! Division by zero."
+    else:
+        return x / y
+def to_binary(decimal):
+    return bin(decimal)
+def celsius_to_fahrenheit(celsius):
+    return (celsius * 9/5) + 32
+def fahrenheit_to_celsius(fahrenheit):
+    return (fahrenheit - 32) * 5/9
+def meters_to_feet(meters):
+    return meters * 3.28084
+def feet_to_meters(feet):
+    return feet * 0.3048
+print("Select operation:")
+print("1. Arithmetic Calculations")
+print("2. Conversion to Binary")
+print("3. Temperature Conversion")
+print("4. Length Conversion")
+while True:
+    choice = input("Enter choice (1/2/3/4): ")
+    if choice == '1':
+        num1 = float(input("Enter first number: "))
+        num2 = float(input("Enter second number: "))
+        operation = input("Enter operation (+, -, *, /): ")
+        if operation == '+':
+            print("Result:", add(num1, num2))
+        elif operation == '-':
+            print("Result:", subtract(num1, num2))
+        elif operation == '*':
+            print("Result:", multiply(num1, num2))
+        elif operation == '/':
+            print("Result:", divide(num1, num2))
+        else:
+            print("Invalid operation")
+    elif choice == '2':
+        decimal = int(input("Enter decimal number to convert to binary: "))
+        print("Binary representation:", to_binary(decimal))
+    elif choice == '3':
+        temp = float(input("Enter temperature: "))
+        unit = input("Enter unit (C for Celsius, F for Fahrenheit): ")
+
+        if unit.upper() == 'C':
+            print("Temperature in Fahrenheit:", celsius_to_fahrenheit(temp))
+        elif unit.upper() == 'F':
+            print("Temperature in Celsius:", fahrenheit_to_celsius(temp))
+        else:
+            print("Invalid unit")
+    elif choice == '4':
+        length = float(input("Enter length: "))
+        unit = input("Enter unit (M for meters, F for feet): ")
+
+        if unit.upper() == 'M':
+            print("Length in feet:", meters_to_feet(length))
+        elif unit.upper() == 'F':
+            print("Length in meters:", feet_to_meters(length))
+        else:
+            print("Invalid unit")
+    else:
+        print("Invalid choice")
+    again = input("Do you want to perform another calculation? (yes/no): ")
+    if again.lower() != 'yes':
+        break
