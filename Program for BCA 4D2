@@ -4,3 +4,74 @@ b) scientific calculation
 c) conversion in binary, octal, hexadecimal, decimal
 d) temperature conversion
 e) length conversion
+Answer:-
+import math
+
+while True:
+    print("press 1 forarithmetic operation")
+    print("press 2 binary conversion")
+    print("press 3 for tempature conveersion")
+    print("press 4 for length conversion")
+    print("press 5 for exit")
+
+    a1 = int(input())
+
+    if(a1 == 1):
+        num1 = int(input("enter a number\n"))
+        o = input("enter + - * / amoung one\n")
+        num2 = int(input("enter a number\n"))
+        if(o == '+'):
+            print(num1+num2)
+
+        elif (o == '-'):
+            print(num1-num2)
+
+        elif(o == '*'):
+            print(num1*num2)
+
+        elif(o == '/'):
+            print( num1/num2)
+        else:
+            print()
+             
+    elif(a1 == 2):
+         num = int(input("enter a number"))
+         sum = 0
+         i = 1
+
+         while(num != 0):
+             bit = num & 1;
+             sum = (bit * i) + sum
+             i = i*10
+             num = num >> 1;
+
+
+         print( sum)
+
+    elif(a1 == 3):
+        print("1 for celsious to fehrenheit")
+        print ("2 for fahrenheit to celsious")
+        x = int(input("ente choice"))
+
+        if(x == 1):
+            print("enter tempratur in celsious")
+            c = float(input())
+            f = (9/5*c) + 32
+            print(f)
+
+
+        elif(x == 2):
+            print("enter temprature in fahrenheit")
+            f = float(input())
+            c = (f-32) + 5/9
+            print( c)
+
+    elif(a1 == 4):
+        print("enter length in meter")
+        l = float(input())
+        km = l/ 1000
+        print("length in kilometer is: ")
+        print(km)
+
+    elif(a1 ==  5):
+        break
