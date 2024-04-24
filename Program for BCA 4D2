@@ -4,3 +4,75 @@ b) scientific calculation
 c) conversion in binary, octal, hexadecimal, decimal
 d) temperature conversion
 e) length conversion
+
+import math
+
+def arct():
+    num1 = int(input("first number: "))
+    operator = input("operator (+, -, *, /): ")
+    num2 = int(input("second number: "))
+
+    if operator == '+':
+        result = num1 + num2
+    elif operator == '-':
+        result = num1 - num2
+    elif operator == '*':
+        result = num1 * num2
+    elif operator == '/':
+        result = num1 / num2
+
+    print("Result:", result)
+
+def sicCal():
+    num = float(input("enter a number: "))
+    print("Square root:", math.sqrt(num))
+    print("Logarithm:", math.log10(num))
+    print("Sine:", math.sin(num))
+    print("Cosine:", math.cos(num))
+    print("Tangent:", math.tan(num))
+
+def BOC_conv():
+    num = int(input("enter a number: "))
+    print("Binary:", bin(num))
+    print("Octal:", oct(num))
+    print("Hexadecimal:", hex(num))
+
+def temp_conv():
+    temperature = float(input("enter temperature in Celsius: "))
+    fahrenheit = (temperature * 9/5) + 32
+    kelvin = temperature + 273.15
+    print("Temperature in Fahrenheit:", fahrenheit)
+    print("Temperature in Kelvin:", kelvin)
+
+def len_conv():
+    length = float(input("length in meters: "))
+    print("leength in centimeters:", length * 100)
+    print("length in kilometers:", length / 1000)
+
+def main():
+    while True:
+        print("1. for arithmetic")
+        print("2. for Scientific")
+        print("3. for binary,octal,hexadecimal conversion")
+        print("4. for temperature")
+        print("5. for length lonversion")
+        print("6. for Exit")
+
+        x = input("Enter your x (1-6): ")
+
+        if x == '1':
+            arct()
+        elif x == '2':
+            sicCal()
+        elif x == '3':
+            BOC_conv()
+        elif x == '4':
+            temp_conv()
+        elif x == '5':
+            len_conv()
+        elif x == '6':
+            print("Thank you")
+            break
+        else:
+            print("Invalid x Try Again")
+main()
