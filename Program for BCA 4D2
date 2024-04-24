@@ -4,3 +4,100 @@ b) scientific calculation
 c) conversion in binary, octal, hexadecimal, decimal
 d) temperature conversion
 e) length conversion
+import math
+
+def basic_calculator():
+    print("Basic Calculator")
+    print("1. Addition")
+    print("2. Subtraction")
+    print("3. Multiplication")
+    print("4. Division")
+    choice = int(input("Enter choice (1/2/3/4): "))
+    num1 = float(input("Enter first number: "))
+    num2 = float(input("Enter second number: "))
+    if choice == 1:
+        print("Result:", num1 + num2)
+    elif choice == 2:
+        print("Result:", num1 - num2)
+    elif choice == 3:
+        print("Result:", num1 * num2)
+    elif choice == 4:
+        if num2 == 0:
+            print("Cannot divide by zero")
+        else:
+            print("Result:", num1 / num2)
+    else:
+        print("Invalid choice")
+
+def scientific_calculator():
+    print("Scientific Calculator")
+    print("1. Sine")
+    print("2. Cosine")
+    print("3. Tangent")
+    print("4. Logarithm")
+    choice = int(input("Enter choice (1/2/3/4): "))
+    num = float(input("Enter number: "))
+    if choice == 1:
+        print("Result:", math.sin(num))
+    elif choice == 2:
+        print("Result:", math.cos(num))
+    elif choice == 3:
+        print("Result:", math.tan(num))
+    elif choice == 4:
+        print("Result:", math.log(num))
+    else:
+        print("Invalid choice")
+
+def conversion_calculator():
+    print("Conversion Calculator")
+    print("1. Length Conversion")
+    print("2. Temperature Conversion")
+    choice = int(input("Enter choice (1/2): "))
+    if choice == 1:
+        length_conversion()
+    elif choice == 2:
+        temperature_conversion()
+    else:
+        print("Invalid choice")
+
+def length_conversion():
+    print("Length Conversion")
+    print("1. Meters to Feet")
+    print("2. Feet to Meters")
+    choice = int(input("Enter choice (1/2): "))
+    value = float(input("Enter value: "))
+    if choice == 1:
+        print("Result:", value * 3.28084)
+    elif choice == 2:
+        print("Result:", value / 3.28084)
+    else:
+        print("Invalid choice")
+
+def temperature_conversion():
+    print("Temperature Conversion")
+    print("1. Celsius to Fahrenheit")
+    print("2. Fahrenheit to Celsius")
+    choice = int(input("Enter choice (1/2): "))
+    temp = float(input("Enter temperature: "))
+    if choice == 1:
+        print("Result:", (temp * 9/5) + 32)
+    elif choice == 2:
+        print("Result:", (temp - 32) * 5/9)
+    else:
+        print("Invalid choice")
+
+# Main program
+print("Welcome to Calculator")
+print("1. Basic Calculator")
+print("2. Scientific Calculator")
+print("3. Conversion Calculator")
+option = int(input("Enter option (1/2/3): "))
+
+if option == 1:
+    basic_calculator()
+elif option == 2:
+    scientific_calculator()
+elif option == 3:
+    conversion_calculator()
+else:
+    print("Invalid option")
