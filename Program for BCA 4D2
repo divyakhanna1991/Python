@@ -4,3 +4,21 @@ b) scientific calculation
 c) conversion in binary, octal, hexadecimal, decimal
 d) temperature conversion
 e) length conversion
+
+
+
+Answer:- def main():
+    num1 = int(input("Enter the first number: "))
+    num2 = int(input("Enter the second number: "))
+
+    addition = num1 + num2
+    subtraction = num1 - num2
+    multiplication = num1 * num2
+    division = num1 / num2 
+
+    print("Add = ", addition)
+    print("Sub = ", subtraction)
+    print("multiply = ", multiplication)
+    print("Divide = ", division)
+if __name__ == "__main__":
+    main()
