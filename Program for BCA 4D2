@@ -4,3 +4,138 @@ b) scientific calculation
 c) conversion in binary, octal, hexadecimal, decimal
 d) temperature conversion
 e) length conversion
+
+import math
+
+def basic_calculator():
+    print("Basic Arithmetic Calculator")
+    print("Operations:")
+    print("1. Addition")
+    print("2. Subtraction")
+    print("3. Multiplication")
+    print("4. Division")
+    
+    choice = input("Enter your choice (1-4): ")
+    
+    num1 = float(input("Enter first number: "))
+    num2 = float(input("Enter second number: "))
+    
+    if choice == '1':
+        print("Result:", num1 + num2)
+    elif choice == '2':
+        print("Result:", num1 - num2)
+    elif choice == '3':
+        print("Result:", num1 * num2)
+    elif choice == '4':
+        if num2 == 0:
+            print("Cannot divide by zero!")
+        else:
+            print("Result:", num1 / num2)
+    else:
+        print("Invalid choice")
+
+def scientific_calculator():
+    print("Scientific Calculator")
+    print("Operations:")
+    print("1. Square root")
+    print("2. Exponential (e^x)")
+    print("3. Logarithm (base 10)")
+    
+    choice = input("Enter your choice (1-3): ")
+    num = float(input("Enter the number: "))
+    
+    if choice == '1':
+        print("Square root:", math.sqrt(num))
+    elif choice == '2':
+        print("Exponential (e^{}):".format(num), math.exp(num))
+    elif choice == '3':
+        print("Logarithm (base 10) of {}:".format(num), math.log10(num))
+    else:
+        print("Invalid choice")
+
+def convert_to_binary(decimal_num):
+    return bin(decimal_num)
+
+def convert_to_octal(decimal_num):
+    return oct(decimal_num)
+
+def convert_to_hexadecimal(decimal_num):
+    return hex(decimal_num)
+
+def number_system_conversion():
+    print("Number System Conversion")
+    decimal_num = int(input("Enter a decimal number: "))
+    
+    print("Binary:", convert_to_binary(decimal_num))
+    print("Octal:", convert_to_octal(decimal_num))
+    print("Hexadecimal:", convert_to_hexadecimal(decimal_num))
+
+def convert_celsius_to_fahrenheit(celsius):
+    return (celsius * 9/5) + 32
+
+def convert_fahrenheit_to_celsius(fahrenheit):
+    return (fahrenheit - 32) * 5/9
+
+def temperature_conversion():
+    print("Temperature Conversion")
+    print("1. Celsius to Fahrenheit")
+    print("2. Fahrenheit to Celsius")
+    
+    choice = input("Enter your choice (1-2): ")
+    temp = float(input("Enter the temperature: "))
+    
+    if choice == '1':
+        print("Converted temperature:", convert_celsius_to_fahrenheit(temp), "F")
+    elif choice == '2':
+        print("Converted temperature:", convert_fahrenheit_to_celsius(temp), "C")
+    else:
+        print("Invalid choice")
+
+def convert_meters_to_feet(meters):
+    return meters * 3.28084
+
+def convert_feet_to_meters(feet):
+    return feet / 3.28084
+
+def length_conversion():
+    print("Length Conversion")
+    print("1. Meters to Feet")
+    print("2. Feet to Meters")
+    
+    choice = input("Enter your choice (1-2): ")
+    length = float(input("Enter the length: "))
+    
+    if choice == '1':
+        print("Converted length:", convert_meters_to_feet(length), "ft")
+    elif choice == '2':
+        print("Converted length:", convert_feet_to_meters(length), "m")
+    else:
+        print("Invalid choice")
+
+
+while True:
+    print("\nCalculator Menu:")
+    print("1. Basic Arithmetic Calculator")
+    print("2. Scientific Calculator")
+    print("3. Number System Conversion")
+    print("4. Temperature Conversion")
+    print("5. length conversion")
+    print("6. Exit")
+    
+    option = input("Enter your choice (1-6): ")
+    
+    if option == '1':
+        basic_calculator()
+    elif option == '2':
+        scientific_calculator()
+    elif option == '3':
+        number_system_conversion()
+    elif option == '4':
+        temperature_conversion()
+    elif option == '5':
+        length_conversion()
+    elif option == '6':
+        print("Exiting Calculator. Goodbye!")
+        break
+    else:
+        print("Invalid choice. Please select a valid option (1-6).")
