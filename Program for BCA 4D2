@@ -4,3 +4,56 @@ b) scientific calculation
 c) conversion in binary, octal, hexadecimal, decimal
 d) temperature conversion
 e) length conversion
+
+
+
+Answer:
+
+
+print("Name:Navdeep Singh Roll Number:2110992590/d2")
+
+a=int(input("Enter first value"))
+b=int(input("Enter second value"))
+p=a+b
+m=a-b
+mp=a*b
+d=a/b
+cal=input("Enter any arthemethic operation to perform(+=p,-=m,*=mp./=d)")
+if cal==p:
+    print("The addition of two number is",p)
+elif cal==m:
+    print("The Subtraction of two number is",m)
+elif cal==mp:
+    print("The Multiplication of two number is",mp)
+elif cal==d:
+    print("The Division of two number is",d)
+else:
+    print("Enter from the given choices")
+
+def conv():
+    print("Length Conversion")
+    feet=int(input("Enter value in feets"))
+    meter=feet/3.2
+    print("Conversion to meters",meter)
+
+    meter2=int(input("Enter value in meters"))
+    feet2=meter2*3.2
+    print("Conversion to feet",feet2)
+
+
+#conv()
+
+def Square():
+    print ("To find the square of the number")
+    num=int(input("Enter the value"))
+    squ=num*num
+    print(squ)
+
+
+#square()
+
+
+
+
+
+
