@@ -1,0 +1,96 @@
+
+
+
+
+#WRITE  python program to disgen calculater with following futers
+#1 1. Basic Calculation
+#2. Scientific Calculation
+#3. Conversion
+#4. Temperature Conversion
+#5. Length Conversion
+
+
+print("Name SOKIN")
+print("Rollno.2210997243")
+
+import math
+
+#def basic_calculator
+
+
+def calculator():
+    print("Basic Calculator")
+    A1 = float(input("Enter first number: "))
+    operator = input("Enter operator (+, -, *, /): ")
+    B2 = float(input("Enter second number: "))
+
+    if operator == '+':
+        print("Result:", A1 + B2)
+    elif operator == '-':
+        print("Result:", A1 - B2)
+    elif operator == '*':
+        print("Result:", A1 * B2)
+    elif operator == '/':
+        if B2 != 0:
+            print("Result:", A1 / B2)
+        else:
+            print("Cannot divide by zero!")
+    else:
+        print("Invalid operator")
+
+def scientific_cal():
+    print("Scientific Calculator")
+    num = float(input("Enter a number: "))
+    print("Square root", math.sqrt(num))
+    print("Sin:", math.sin(num))
+
+def conversion_cal():
+    print("Conversion Calculator")
+    sub = int(input("Enter a number to convert: "))
+    print("Binary:", bin(sub))
+    print("Octal:", oct(sub))
+    print("Hexadecimal:", hex(sub))
+
+def temperature_converter():
+    print("Temperature Converter")
+    temp = float(input("Enter temperature in Celsius: "))
+    print("Temperature in Fahrenheit:", (temp * 9/5) + 32)
+    print("Temperature in Kelvin:", temp + 273.15)
+
+def length_converter():
+    print("Length Converter")
+    length = float(input("Enter length in meters: "))
+    print("Length in kilometers:", length / 1000)
+    print("Length in centimeters:", length * 100)
+    print("Length in millimeters:", length * 1000)
+
+def main():
+    print("Disgen Calculator!")
+    while True:
+        print("\nMenu:")
+        print("1. Basic Calculation")
+        print("2. Scientific Calculation")
+        print("3. Conversion")
+        print("4. Temperature Conversion")
+        print("5. Length Conversion")
+        print("6. Exit")
+        choice = input("Enter your choice (1-6): ")
+
+        if choice == '1':
+            basic_calculator()
+        elif choice == '2':
+            scientific_calculator()
+        elif choice == '3':
+            conversion_calculator()
+        elif choice == '4':
+            temperature_converter()
+        elif choice == '5':
+            length_converter()
+        elif choice == '6':
+            print("Exiting...")
+            break
+        else:
+            print("Invalid choice!")
+
+if __name__ == "__main__":
+    main()
