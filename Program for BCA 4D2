@@ -4,3 +4,79 @@ b) scientific calculation
 c) conversion in binary, octal, hexadecimal, decimal
 d) temperature conversion
 e) length conversion
+
+#Write Python program to design calculator with following features
+#a) basic arithmetic
+#b) Scientific calculator
+#c) binary octal hexadecimal
+#d) temperature conversion
+#c) length conversion
+
+import math
+
+def basic_arithmetic():
+    num1 = float(input("Enter first number: "))
+    operator = input("Enter operator (+, -, *, /): ")
+    num2 = float(input("Enter second number: "))
+
+    if operator == '+':
+        print("Result:", num1 + num2)
+    elif operator == '-':
+        print("Result:", num1 - num2)
+    elif operator == '*':
+        print("Result:", num1 * num2)
+    elif operator == '/':
+        if num2 != 0:
+            print("Result:", num1 / num2)
+        else:
+            print("Cannot divide by zero!")
+
+def scientific_calculator():
+    num = float(input("Enter a number: "))
+    print("Square root:", math.sqrt(num))
+    print("Algorithm:", math.log(num))
+    print("Sin:", math.sin(num))
+    print("Cos:", math.cos(num))
+    print("Tan:", math.tan(num))
+
+def binary_octal_hexadecimal():
+    num = int(input("Enter a number: "))
+    print("Binary:", bin(num))
+    print("Octal:", oct(num))
+    print("Hexadecimal:", hex(num))
+
+def temperature_conversion():
+    temp = float(input("Enter temperature in Celsius: "))
+    print("Temperature in Fahrenheit:", (temp * 9/5) + 32)
+    print("Temperature in Kelvin:", temp + 273.15)
+
+def length_conversion():
+    length = float(input("Enter length in meters: "))
+    print("Length in centimeters:", length * 100)
+    print("Length in kilometers:", length / 1000)
+
+while True:
+    print("\n1. Basic Arithmetic")
+    print("2. Scientific Calculator")
+    print("3. Binary/Octal/Hexadecimal")
+    print("4. Temperature Conversion")
+    print("5. Length Conversion")
+    print("6. Exit")
+
+    choice = input("Enter your choice: ")
+
+    if choice == '1':
+        basic_arithmetic()
+    elif choice == '2':
+        scientific_calculator()
+    elif choice == '3':
+        binary_octal_hexadecimal()
+    elif choice == '4':
+        temperature_conversion()
+    elif choice == '5':
+        length_conversion()
+    elif choice == '6':
+        print("Exiting...")
+        break
+    else:
+        print("Invalid choice. Please enter a number between 1 and 6.")
