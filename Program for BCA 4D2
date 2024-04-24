@@ -4,3 +4,47 @@ b) scientific calculation
 c) conversion in binary, octal, hexadecimal, decimal
 d) temperature conversion
 e) length conversion
+ANSWER:-
+def add(num1,num2):
+    return num1+num2
+def substract(num1,num2):
+    return num1-num2
+def multiply(num1,num2):
+    return num1*num2
+def divide(num1,num2):
+    return num1/num2
+def feet_to_meters(feet):
+    return feet/3.2
+def meters_to_feet(meter):
+    return meter*3.2
+
+print("Name= Tarun kumar,7256")
+print("Welcome to the calculator")
+print("1.add");
+print("2.substract");
+print("3.multiply");
+print("4.divide");
+print("5.fee to  meters");
+print("6.meters to feet");
+
+choice=input("Enter your choice")
+num1=float(input("Enter the first value"))
+num2=float(input("Enter the second value"))
+
+if choice=="1":
+    print("Result : ",add(num1,num2))
+elif choice=="2":
+    print("Result : ",substract(num1,num2))
+elif choice=="3":
+    print("Result : ",multiply(num1,num2))
+elif choice=="4":
+    print("Result : ",divide(num1,num2))
+elif choice=="5":
+    print("Result : ",feet_to_meters(num1,num2))
+elif choice=="6":
+    print("Result : ",meters_to_feet(num1,num2))  
+    
+else:
+    print("Invalid choice")
+
+    
