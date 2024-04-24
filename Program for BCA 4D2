@@ -4,3 +4,40 @@ b) scientific calculation
 c) conversion in binary, octal, hexadecimal, decimal
 d) temperature conversion
 e) length conversion
+Answer:
+def addition(x,y):
+    return x+y:     
+def subtraction(x,y):
+    return x-y:
+def multiply (x,y):
+    return x*y:
+def divide (x,y):
+    return x==0:
+        else: retrun x/y
+        print("select operation")
+        print("addition")
+        print("subtraction")
+        print("multiplication")
+        print("divide")
+        while true:
+            choice = input("enter choice")
+        if choice = ('1','2','3','4'):
+            num1=float(input("enter number: "))
+            num2=float(input("enter number: "))
+        if:
+            choice == '1':
+             print("result= ",add(num1,num2))
+        elif:
+            choice =='2':
+             print("result= ",subtract(num1,num2))
+        elif:
+            choice =='3':
+             print("result= ",multiply(num1,num2))
+        elif:
+            choice =='4':
+             print("result= ",divide(num1,num2))
+        else:
+             print("invalid input")
+            again = input("perform another operation")
+            if again.lower()!='yes':
+            break
