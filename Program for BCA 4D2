@@ -4,3 +4,63 @@ b) scientific calculation
 c) conversion in binary, octal, hexadecimal, decimal
 d) temperature conversion
 e) length conversion
+import maths
+ def basic_Calculator():
+     print("basic calculator")
+     num1=float(input("enter first number:"))
+     operator=input("enter operator(+,-,*,/):")
+     num2=flao(input("enter second number:"))
+     if operator=='+':
+         print("Result:",num1+num2)
+     elif operator=='-':
+         print("Result:",num1-num2)
+        elif operator=='*':
+         print("Result:",num1*num2)
+         elif operator=='/':
+             ifnum2!=0:
+         print("Result:",num1/num2)
+         else:
+             print("result:",cannot divide by zero")
+                   else:
+                       print("invaild perator")
+                       def scientific_calculator():
+                           print("1.Square root")
+                           print("2.logarithm(base 10)")
+                            print("3.Natural logarithm")
+                            choice(1/2/3):"))
+                            if choice==1:
+                                print("square root:", math.sqrt(num))
+                                elif choice==2:
+                                    print("logarithm(base10):",
+                                          math.log10(num))
+                                    elif choice==3:
+                                      print("Natural logarithm:",
+                                          math.log(num))
+                                      else:
+                                          print("invaild choice")
+                                          def conversion_calculator():
+                                              print("conversion calculator")
+                                              
+print("1.Binary")
+print("2.octal")
+print("3.hexadecimal")
+print("4.Temperature")
+print("5.Length")
+choice=int(input("enter yourchoice(1/2/3/4/5):"))
+if choice==1:
+num=int(input("enter a decimal number:"))
+print("binary:",bin(num))
+elif choice==2:
+num=int(input("enter a decimal number:"))
+print("octal:"oct(num))
+elif choice==3:
+num=int(input("enter a decimal number:"))
+print("hexadecimal:"hex(num))
+elif choice==4:
+celsius=float(input(enter temperatur in celsius:"))
+                    Faherheit:",=(celsius*9/5)+32
+                    if choice==5:
+
+
+
+
