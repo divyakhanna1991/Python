@@ -4,3 +4,29 @@ b) print the length of the entered string
 c) convert string element to uppercase, lowercase, capitalise the first letter, title-case
 and swapcase
 d) print the letters which are at odd index
+def main():
+    user_input = input("Enter a string: ")//user se input lena
+
+    # Task 1: Count vowels karna
+    vowels = "AEIOUaeiou"
+    vowel_count = sum(1 for char in user_input if char in vowels)
+    print(f"Number of vowels: {vowel_count}")
+
+    # Task 2: Length of entered string
+    string_length = len(user_input)
+    print(f"Length of the string: {string_length}")
+
+    # Task 3: String ko badalna 
+    print(f"Uppercase: {user_input.upper()}")
+    print(f"Lowercase: {user_input.lower()}")
+    print(f"Capitalized: {user_input.capitalize()}")
+    print(f"Title case: {user_input.title()}")
+    print(f"Swap case: {user_input.swapcase()}")
+
+    # Task 4: Letters at odd indices 
+    odd_indices_letters = user_input[1::2]
+    print(f"Letters at odd indices: {odd_indices_letters}")
+
+if __name__ == "__main__":
+    main()
+
