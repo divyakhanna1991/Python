@@ -4,3 +4,28 @@ b) print the length of the entered string
 c) convert string element to uppercase, lowercase, capitalise the first letter, title-case
 and swapcase
 d) print the letters which are at odd index
+
+Ans ---> 
+
+
+def main():
+    user_input = input("Enter a string: ")
+    
+    # Task 2: Print length of the entered string
+    print("Length of the string:", len(user_input))
+    
+    # Task 3: Convert string elements
+    print("Uppercase:", user_input.upper())
+    print("Lowercase:", user_input.lower())
+    print("Capitalized:", user_input.capitalize())
+    print("Swapcase:", user_input.swapcase())
+    
+    # Task 4: Print letters at odd indexes (assuming index starts from 0)
+    print("Letters at odd indexes:", end=" ")
+    for i in range(len(user_input)):
+        if i % 2 != 0:
+            print(user_input[i], end=" ")
+    print()
+
+if _name_ == "_main_":
+    main()
