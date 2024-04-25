@@ -11,3 +11,95 @@ original list.
 a) to add items to their cart,
 b) view their cart,
 c) calculate the total price.
+
+
+import re
+
+
+aadhaar_data = {
+    "123456789012": {"name": "John Doe", "company": "ABC Corporation"},
+    "987654321098": {"name": "Jane Smith", "company": "XYZ Inc."}
+}
+
+class ShoppingCart:
+    def __init__(self):
+        self.items = {}
+
+    def add_item(self, item, price):
+        if item in self.items:
+            self.items[item] += price
+        else:
+            self.items[item] = price
+
+    def view_cart(self):
+        print("Items in Cart:")
+        for item, price in self.items.items():
+            print(f"{item}: ${price:.2f}")
+
+    def calculate_total(self):
+        total = sum(self.items.values())
+        print("Total Price:", "${:.2f}".format(total))
+
+def validate_aadhaar(aadhaar_number):
+  
+    aadhaar_pattern = re.compile(r'^\d{12}$')
+    if not aadhaar_pattern.match(aadhaar_number):
+        return False
+    
+    return True
+
+def get_aadhaar_details(aadhaar_number):
+    if aadhaar_number in aadhaar_data:
+        return aadhaar_data[aadhaar_number]
+    else:
+        return None
+
+def main():
+  
+    aadhaar_number = input("Enter Aadhaar number: ")
+    if validate_aadhaar(aadhaar_number):
+        details = get_aadhaar_details(aadhaar_number)
+        if details:
+            print("Name:", details["name"])
+            print("Company:", details["company"])
+        else:
+            print("Aadhaar details not found.")
+    else:
+        print("Invalid Aadhaar number.")
+
+  
+    numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    new_list = [num for index, num in enumerate(numbers) if num % 2 == 0 and index % 2 == 0]
+    print("New list:", new_list)
+
+    
+    occurrences = {num: numbers.count(num) for num in set(numbers)}
+    print("Occurrences:", occurrences)
+
+
+    cart = ShoppingCart()
+
+    while True:
+        print("\n1. Add item to cart")
+        print("2. View cart")
+        print("3. Calculate total")
+        print("4. Exit")
+
+        choice = input("Enter your choice: ")
+
+        if choice == '1':
+            item = input("Enter item name: ")
+            price = float(input("Enter price: "))
+            cart.add_item(item, price)
+        elif choice == '2':
+            cart.view_cart()
+        elif choice == '3':
+            cart.calculate_total()
+        elif choice == '4':
+            print("Thank you for shopping with us!")
+            break
+        else:
+            print("Invalid choice. Please try again.")
+
+if __name__ == "__main__":
+    main()
