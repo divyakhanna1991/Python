@@ -4,3 +4,38 @@ b) print the length of the entered string
 c) convert string element to uppercase, lowercase, capitalise the first letter, title-case
 and swapcase
 d) print the letters which are at odd index
+input_string = input('Enter a String: ')
+count = 0
+String = input_string.lower()
+for vowel in String:
+    if vowel == 'a' or vowel == 'e' or vowel == 'i' or vowel == 'o' or vowel == 'u':
+        count += 1
+
+if count == 0:
+    print('No vowels found')
+else:
+    print('Total number of vowels in the proverb are:', count)
+user_input = input("Enter a string: ")
+length = len(user_input)
+print("Length of the input string is:", length)
+input_string = input("Enter a string: ")
+
+for i in range(len(input_string)):
+    if i % 2 != 0:
+        print(input_string[i])
+original_string = "hello world"
+uppercase_string = original_string.upper()
+print("Uppercase:", uppercase_string)
+original_string = "Hello World"
+lowercase_string = original_string.lower()
+print("Lowercase:", lowercase_string)
+
+original_string = "hello world"
+capitalized_string = original_string.capitalize()
+print("Capitalized:", capitalized_string)
+original_string = "the quick brown fox"
+title_case_string = original_string.title()
+print("Title Case:", title_case_string)
+original_string = "HeLLo WoRLd"
+swapped_case_string = original_string.swapcase()
+print("Swapped Case:", swapped_case_string)
