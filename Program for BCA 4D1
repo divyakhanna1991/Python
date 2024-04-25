@@ -4,3 +4,10 @@ b) print the length of the entered string
 c) convert string element to uppercase, lowercase, capitalise the first letter, title-case
 and swapcase
 d) print the letters which are at odd index
+
+
+vowels='a','e','i','o','u'
+print('print no of vowels in entered string')
+for i in vowels:
+    vowels.count()
+    
