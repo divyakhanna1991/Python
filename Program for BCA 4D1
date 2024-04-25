@@ -4,3 +4,30 @@ b) print the length of the entered string
 c) convert string element to uppercase, lowercase, capitalise the first letter, title-case
 and swapcase
 d) print the letters which are at odd index
+
+
+Anugrah Das 2210997040 D1
+def process_string(s):
+    vowels = "aeiouAEIOU"
+    vowel_count = 0
+    for char in input_string:
+        if char in vowels:
+            vowel_count+=1
+    #A
+    print("Number of vowels in the String: ", vowel_count)
+    #B
+    print("Length of entered string: ", len(user_input))
+    #C
+    print("Converting String to Uppercase: ", user_input.upper())
+    print("Converting String to Lowercase: ", user_input.lower())
+    print("Capitalizing first Letter of string: ", user_input.capitalize())
+    print("Converting String to Title Case: ", user_input.title())
+    print("Converting String to Swap Case: ", user_input.swapcase())
+    #D
+    odd_index_letters = ""
+    for index, char in enumerate(input_string):
+        if index % 2 == 0:
+            odd_index_letters += char
+    print("Letters at odd indices:", odd_index_letters)
+user_input = input("Enter a string: ")
+process_string(user_input)
