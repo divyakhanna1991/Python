@@ -4,3 +4,45 @@ b) print the length of the entered string
 c) convert string element to uppercase, lowercase, capitalise the first letter, title-case
 and swapcase
 d) print the letters which are at odd index
+----------------------------------------------------------------------------------------------------
+Ans a) 
+def count_vowels(s):
+    vowels = "aeiouAEIOU"
+    count = 0
+    for char in s:
+        if char in vowels:
+            count += 1
+    return count
+user_input = input("Enter string: ")
+num_vowels = count_vowels(user_input)
+print("Number of vowels:", num_vowels)
+
+Ans b)
+user_input = input("Enter string: ")
+length = len(user_input)
+print("Length of the string:", length)
+
+Ans c)
+def convert_string(s):
+    uppercase = s.upper()
+    lowercase = s.lower()
+    capitalize = s.capitalize()
+    titlecase = s.title()
+    swapcase = s.swapcase()
+    print("Uppercase:", uppercase)
+    print("Lowercase:", lowercase)
+    print("Capitalize:", capitalize)
+    print("Titlecase:", titlecase)
+    print("Swapcase:", swapcase)
+user_input = input("Enter string: ")
+convert_string(user_input)
+
+Ans d)
+def print_odd_index_letters(s):
+    for i, char in enumerate(s):
+        if i % 2 != 0:
+            print(char, end=" ")
+
+user_input = input("Enter string: ")
+print_odd_index_letters(user_input)
+
