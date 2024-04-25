@@ -4,3 +4,28 @@ b) print the length of the entered string
 c) convert string element to uppercase, lowercase, capitalise the first letter, title-case
 and swapcase
 d) print the letters which are at odd index
+
+Answer:-
+s = input("Enter a string: ")
+print("Number of vowels in entered string :")
+for i in s:
+    if(i=='a' or i=='e' or i=='i' or i=='o' or i=='u'):
+        print(i)
+    else:
+        print("no vowels in the string")
+
+length_of_string = len(s)
+print("length of entered string is :",length_of_string)
+
+upperCase = s.upper()
+lowerCase = s.lower()
+FirstCapital = s.capitalize()
+swapCase = s.swapcase()
+print("string in uppercase is :",upperCase)
+print("string in lowercase is :",lowerCase)
+print("string with first letter capital is :",FirstCapital)
+print("string in swap case is :",swapCase)
+
+print("letters at old index are :")
+for i in range(0,length_of_string):
+    print(s[i])
