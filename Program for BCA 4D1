@@ -1,6 +1,52 @@
 Write a python program which takes user input and do the following tasks:
 a) print number of vowels in the entered string
+code
+     def count_vowels(input_string):
+        vowels = 'aeiouAEIOU'
+        count = 0
+        for character in input_string:
+            if character in vowels:
+                count += 1
+        return count
+
+      J = input("Enter a string: ")
+      print("Number of vowels: ", count_vowels(J))
+
+
 b) print the length of the entered string
+code
+      string = input("Enter a string: ")
+      print("Length of string: ", len(string))
+
+
 c) convert string element to uppercase, lowercase, capitalise the first letter, title-case
-and swapcase
+and swapcase    
+code
+     
+input_string = input("Enter a string: ")
+
+A = input_string.upper()
+print("Upper case: ", A)
+
+B = input_string.lower()
+print("Lower case: ", B)
+
+C = input_string.capitalize()
+print("Capitalized: ", C)
+
+D = " ".join(word.capitalize() for word in input_string.split())
+print("Title case: ", D)
+
+E = "".join(c.upper() if c.islower() else c.lower() for c in input_string)
+print("Swap case: ", E)
+
+
 d) print the letters which are at odd index
+code
+    I = input("Enter a string: ")
+    old_index = int(input("Enter the index no: "))
+
+    if old_index >= 0 and old_index < len(input_string):
+        print("Letter at old index: ", I[old_index])
+    else:
+        print("Invalid index")
