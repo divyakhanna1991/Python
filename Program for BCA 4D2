@@ -4,3 +4,77 @@ b) scientific calculation
 c) conversion in binary, octal, hexadecimal, decimal
 d) temperature conversion
 e) length conversion
+
+ANSWER:-
+import math
+
+def arithmetic():
+    num1 = float(input("Enter the first number: "))
+    num2 = float(input("Enter the second number: "))
+    operator = input("Enter the operator (+, -, *, /): ")
+
+    if operator == '+':
+        result = num1 + num2
+    elif operator == '-':
+        result = num1 - num2
+    elif operator == '*':
+        result = num1 * num2
+    elif operator == '/':
+        if num2 != 0:
+            result = num1 / num2
+        else:
+            result = "Error not divisible "      
+    print("Result:", result)
+
+def scien_cal():
+    num = float(input("Enter a number: "))
+    print("Square root:", math.sqrt(num))
+    print("Logarithm:", math.log(num))
+    print("Sine:", math.sin(num))
+    print("Cosine:", math.cos(num))
+    print("Tangent:", math.tan(num))
+
+def conversion():
+    num = int(input("Enter a number: "))
+    print("Binary:", bin(num))
+    print("Octal:", oct(num))
+    print("Hexadecimal:", hex(num))
+
+def temp_conversion():
+    temperature = float(input("Enter temperature in Celsius: "))
+    fahrenheit = (temperature * 9/5) + 32
+    kelvin = temperature + 273.15
+    print("Temperature in Fahrenheit:", fahrenheit)
+    print("Temperature in Kelvin:", kelvin)
+
+def len_conversion():
+    length = float(input("Enter length in meters: "))
+    print("Length in centimeters:", length * 100)
+    print("Length in kilometers:", length / 1000)
+
+def main():
+    while True:
+        print("\nWelcome to Basic Calculator")
+        print("1. Basic Arithmetic")
+        print("2. Scientific Calculator")
+        print("3. Conversion (Binary, Octal, Hexadecimal)")
+        print("4. Temperature Conversion")
+        print("5. Length Conversion")
+        print("6. Exit")
+
+        choice = input("Enter your choice (1-6): ")
+
+        if choice == '1':
+            arithmetic()
+        elif choice == '2':
+            scien_cal()
+        elif choice == '3':
+            conversion()
+        elif choice == '4':
+            temp_conversion()
+        elif choice == '5':
+            len_conversion()
+        elif choice == '6':
+            break
+
+main()
